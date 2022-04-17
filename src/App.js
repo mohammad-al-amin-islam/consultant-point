@@ -7,6 +7,7 @@ import Header from './Pages/Shared/Header/Header';
 import Checkout from './Pages/Checkout/Ceckout';
 import Login from './Pages/Login/Login/Login';
 import Register from './Pages/Login/Register/Register'
+import RequireAuth from './Pages/RequireAuth/RequireAuth';
 
 function App() {
   return (
@@ -15,7 +16,11 @@ function App() {
       <Routes>
         <Route path='/' element={<Home></Home>}></Route>
         <Route path='/home' element={<Home></Home>}></Route>
-        <Route path='/checkout' element={<Checkout></Checkout>}></Route>
+        <Route path='/checkout' element={
+          <RequireAuth>
+            <Checkout></Checkout>
+          </RequireAuth>
+        }></Route>
         <Route path='/login' element={<Login></Login>}></Route>
         <Route path='/register' element={<Register></Register>}></Route>
         <Route path='/blogs' element={<Blogs></Blogs>}></Route>

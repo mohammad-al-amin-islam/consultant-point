@@ -3,6 +3,7 @@ import { Button, Form } from 'react-bootstrap';
 import { Link, useNavigate } from 'react-router-dom';
 import auth from '../../../firebase.init';
 import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { useLocation } from "react-router-dom";
 const Login = () => {
     const [
         signInWithEmailAndPassword,
@@ -21,11 +22,13 @@ const Login = () => {
     }
 
     const navigate = useNavigate();
+    const location = useLocation()
+    let from = location.state?.from?.pathname || "/";
     useEffect(() => {
         if (user) {
-            navigate('/');
+            navigate(from);
         }
-    }, [user, navigate]);
+    }, [user, navigate, from]);
     return (
         <div className='w-100 '>
             <div className='w-50 mx-auto shadow-lg p-5 m-5 rounded h-100 bg-light'>
