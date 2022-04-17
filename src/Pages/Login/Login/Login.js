@@ -18,7 +18,7 @@ const Login = () => {
                     <Form.Group className="mb-3" controlId="formBasicPassword">
                         <Form.Control className='p-3 fs-5 border-0' type="password" placeholder="Password" />
                     </Form.Group>
-                    <Button className='d-block fs-5 w-50 mx-auto p-3 border-0' variant="primary" type="submit">
+                    <Button className='d-block fs-5 w-50 mx-auto p-3 border-0' variant="success" type="submit">
                         Login
                     </Button>
                 </Form>
@@ -26,7 +26,7 @@ const Login = () => {
                     <div className='border w-25'></div> <p className='mx-4 my-2'>Or Log in With</p> <div className='border w-25'></div>
                 </div>
                 <button className='d-block fs-5 w-25 mx-auto p-3 border-0 my-2'>Google</button>
-                <p className='text-center'>Don't have an account? <Link className='text-decoration-none' to='/'>Register here</Link> </p>
+                <p className='text-center'>Don't have an account? <Link className='text-decoration-none' to='/register'>Register here</Link> </p>
             </div>
         </div>
     );
