@@ -9,6 +9,7 @@ const Banner = () => {
                     <div className="col-sm-12 col-lg-6">
                         <div className="banner-text">
                             <h1 className='text-primary'>Guiding Towards To Take Right Decisions</h1>
+                            <p>Develop your business and gain new insight through consultancy</p>
                             <button className="btn btn-primary fw-bold">Read More</button>
                         </div>
                     </div>
