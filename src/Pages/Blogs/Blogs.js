@@ -21,8 +21,7 @@ const Blogs = () => {
                 <div className="card-body">
                     <h5 className="card-title">3.What other services does firebase provide other than authentication?</h5>
                     <p className="card-text">Ans: <br />
-                        Cloud Storage,Cloud Firestore,
-                        There are many services firebase provide.From them some important services are Google Analytics, Hosting, Cloud Functions,Predictions,Dynamic Links,Remote Config,Cloud Messaging
+                        There are many services firebase provide.From them some important services are Google Analytics, Hosting, Cloud Functions,Predictions,Dynamic Links,Remote Config,Cloud Messaging,Cloud Storage,Cloud Firestore,
                     </p>
                 </div>
             </div>
