@@ -6,11 +6,11 @@ import 'react-toastify/dist/ReactToastify.css';
 const Ceckout = () => {
     const handleChekoutButton = (event) => {
         event.preventDefault();
-        toast('Order Placed Succesfully')
+        toast('Thank you for the booking')
     }
     return (
         <div className='w-100 '>
-            <div className='w-50 mx-auto shadow-lg p-5 m-5 rounded h-100 bg-light'>
+            <div className='form-container mx-auto shadow-lg p-5 m-5 rounded h-100 bg-light'>
                 <div className='text-center text-primary m-3'>
                     <h1>Consultant Point</h1>
                     <h4>Checkout Form</h4>

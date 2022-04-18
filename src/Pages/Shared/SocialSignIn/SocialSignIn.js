@@ -1,9 +1,8 @@
 import React, { useEffect } from 'react';
 import { useSignInWithGoogle } from 'react-firebase-hooks/auth';
-import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../../firebase.init';
 import google from '../../../images/google.png'
-import Loading from '../Loading/Loading';
 
 
 const SocialSignIn = () => {
@@ -18,10 +17,6 @@ const SocialSignIn = () => {
             navigate(from);
         }
     }, [user, navigate, from]);
-
-    if (loading) {
-        return <Loading></Loading>
-    }
 
     let getError;
     if (error) {
