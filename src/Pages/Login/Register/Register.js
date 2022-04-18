@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Button, Form } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import auth from '../../../firebase.init';
 import Loading from '../../Shared/Loading/Loading';
 import SocialSignIn from '../../Shared/SocialSignIn/SocialSignIn';
+import { useNavigate } from 'react-router-dom';
+import { useLocation } from "react-router-dom";
 
 const Register = () => {
 
@@ -13,7 +15,18 @@ const Register = () => {
         user,
         loading,
         error,
-    ] = useCreateUserWithEmailAndPassword(auth);
+    ] = useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
+
+    const navigate = useNavigate();
+    const location = useLocation();
+    let from = location.state?.from?.pathname || "/";
+
+    useEffect(() => {
+        if (user) {
+            navigate(from);
+        }
+    }, [user, navigate, from]);
+
 
     if (loading) {
         return <Loading></Loading>
@@ -27,6 +40,11 @@ const Register = () => {
         console.log(email, password);
 
         createUserWithEmailAndPassword(email, password);
+    }
+
+    let getError;
+    if (error) {
+        getError = <p>{error?.message}</p>
     }
     return (
         <div className='w-100 '>
@@ -47,11 +65,15 @@ const Register = () => {
                     <Form.Group className="mb-3" controlId="formBasicPassword">
                         <Form.Control className='p-3 fs-5 border-0' type="password" name='password' placeholder="Password" required />
                     </Form.Group>
+                    {getError}
                     <Button className='d-block fs-5 w-50 mx-auto p-3 border-0' variant="success" type="submit">
                         Register
                     </Button>
                 </Form>
+                <p className='text-center'>Already a member?<Link className='text-decoration-none' to='/login'>Login here</Link> </p>
+
                 <SocialSignIn></SocialSignIn>
+
             </div>
         </div>
     );
