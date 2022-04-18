@@ -5,6 +5,7 @@ import auth from '../../../firebase.init';
 import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { useLocation } from "react-router-dom";
 import Loading from '../../Shared/Loading/Loading';
+import SocialSignIn from '../../Shared/SocialSignIn/SocialSignIn';
 const Login = () => {
     const [
         signInWithEmailAndPassword,
@@ -54,11 +55,7 @@ const Login = () => {
                         Login
                     </Button>
                 </Form>
-                <div className='mt-3 d-flex align-items-center justify-content-center'>
-                    <div className='border w-25'></div> <p className='mx-4 my-2'>Or Log in With</p> <div className='border w-25'></div>
-                </div>
-                <button className='d-block fs-5 w-25 mx-auto p-3 border-0 my-2'>Google</button>
-                <p className='text-center'>Don't have an account? <Link className='text-decoration-none' to='/register'>Register here</Link> </p>
+                <SocialSignIn></SocialSignIn>
             </div>
         </div>
     );

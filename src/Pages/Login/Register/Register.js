@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import auth from '../../../firebase.init';
 import Loading from '../../Shared/Loading/Loading';
+import SocialSignIn from '../../Shared/SocialSignIn/SocialSignIn';
 
 const Register = () => {
 
@@ -50,11 +51,7 @@ const Register = () => {
                         Register
                     </Button>
                 </Form>
-                <div className='mt-3 d-flex align-items-center justify-content-center'>
-                    <div className='border w-25'></div> <p className='mx-4 my-2'>Or Log in With</p> <div className='border w-25'></div>
-                </div>
-                <button className='d-block fs-5 w-25 mx-auto p-3 border-0 my-2'>Google</button>
-                <p className='text-center'>Already a member?<Link className='text-decoration-none' to='/login'>Login here</Link> </p>
+                <SocialSignIn></SocialSignIn>
             </div>
         </div>
     );
