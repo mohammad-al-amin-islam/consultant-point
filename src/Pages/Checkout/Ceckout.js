@@ -1,7 +1,13 @@
 import React from 'react';
 import { Button, Form } from 'react-bootstrap';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Ceckout = () => {
+    const handleChekoutButton = (event) => {
+        event.preventDefault();
+        toast('Order Placed Succesfully')
+    }
     return (
         <div className='w-100 '>
             <div className='w-50 mx-auto shadow-lg p-5 m-5 rounded h-100 bg-light'>
@@ -24,13 +30,12 @@ const Ceckout = () => {
                     <Form.Group className="mb-3" controlId="formBasicNumber">
                         <Form.Control className='p-3 fs-5 border-0' type="text" name='number' placeholder="Phone Number" required />
                     </Form.Group>
-                    <Button className='d-block fs-5 w-50 mx-auto p-3 border-0' variant="success" type="submit">
+                    <Button onClick={handleChekoutButton} className='d-block fs-5 w-50 mx-auto p-3 border-0' variant="success" type="submit">
                         Checkout
                     </Button>
                 </Form>
-
-
             </div>
+            <ToastContainer />
         </div>
     );
 };

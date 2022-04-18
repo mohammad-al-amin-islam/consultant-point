@@ -11,6 +11,8 @@ import { useSendPasswordResetEmail } from 'react-firebase-hooks/auth';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
+import './Login.css';
+
 const Login = () => {
     const emailRef = useRef('');
     const [
@@ -66,8 +68,8 @@ const Login = () => {
     }
 
     return (
-        <div className='w-100 '>
-            <div className='w-50 mx-auto shadow-lg p-5 m-5 rounded h-100 bg-light'>
+        <div className='w-100 form-responsive-contaner'>
+            <div className=' form-container mx-auto shadow-lg p-5 m-5 rounded h-100 bg-light'>
                 <div className='text-center text-primary m-3'>
                     <h1>Consultant Point</h1>
                     <h4>Sign in to your account</h4>
@@ -82,7 +84,7 @@ const Login = () => {
                     </Form.Group>
                     {getError}
                     <p>Forget Password? <button onClick={handleResetBtn} className="btn btn-link text-decoration-none">Reset Here</button></p>
-                    <Button className='d-block fs-5 w-50 mx-auto p-3 border-0' variant="success" type="submit">
+                    <Button className='d-block fs-5 w-50 mx-auto p-3 border-0 mb-3' variant="success" type="submit">
                         Login
                     </Button>
                 </Form>

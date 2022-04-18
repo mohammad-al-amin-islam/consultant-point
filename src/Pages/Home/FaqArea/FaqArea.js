@@ -14,18 +14,18 @@ const FaqArea = () => {
             <h1 className='text-center'>Have Any Question?</h1>
             <Form>
                 <Row className="mb-3">
-                    <Form.Group as={Col} controlId="formGridEmail">
-                        <Form.Control className="p-3" type="email" placeholder="Enter email" required />
+                    <Form.Group as={Col} controlId="formGridText">
+                        <Form.Control className="p-3" type="Text" placeholder="Your Name" required />
                     </Form.Group>
 
-                    <Form.Group as={Col} controlId="formGridPassword">
-                        <Form.Control className="p-3" type="password" placeholder="Password" required />
+                    <Form.Group as={Col} controlId="formGridEmail">
+                        <Form.Control className="p-3" type="Email" placeholder="Your Email" required />
                     </Form.Group>
                 </Row>
 
 
                 <Row className="mb-3">
-                    <Form.Group as={Col} controlId="formGridEmail">
+                    <Form.Group as={Col} controlId="formGridPhone">
                         <Form.Control className="p-3" type="text" placeholder="Your Phone" required />
                     </Form.Group>
 

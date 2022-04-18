@@ -10,6 +10,7 @@ import { useLocation } from "react-router-dom";
 
 const Register = () => {
 
+    //create user and also verification mail authentication
     const [
         createUserWithEmailAndPassword,
         user,
@@ -32,6 +33,8 @@ const Register = () => {
         return <Loading></Loading>
     }
 
+
+    //handle form submit
     const handleFromSubmitReg = event => {
         event.preventDefault();
         const email = event.target.email.value;
@@ -48,7 +51,7 @@ const Register = () => {
     }
     return (
         <div className='w-100 '>
-            <div className='w-50 mx-auto shadow-lg p-5 m-5 rounded h-100 bg-light'>
+            <div className='form-container mx-auto shadow-lg p-5 m-5 rounded h-100 bg-light'>
                 <div className='text-center text-primary m-3'>
                     <h1>Consultant Point</h1>
                     <h4>Create an account</h4>
@@ -66,7 +69,7 @@ const Register = () => {
                         <Form.Control className='p-3 fs-5 border-0' type="password" name='password' placeholder="Password" required />
                     </Form.Group>
                     {getError}
-                    <Button className='d-block fs-5 w-50 mx-auto p-3 border-0' variant="success" type="submit">
+                    <Button className='d-block fs-5 w-50 mx-auto p-3 border-0 mb-3' variant="success" type="submit">
                         Register
                     </Button>
                 </Form>
