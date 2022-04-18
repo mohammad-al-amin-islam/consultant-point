@@ -3,6 +3,7 @@ import { Button, Form } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import auth from '../../../firebase.init';
+import Loading from '../../Shared/Loading/Loading';
 
 const Register = () => {
 
@@ -13,7 +14,9 @@ const Register = () => {
         error,
     ] = useCreateUserWithEmailAndPassword(auth);
 
-
+    if (loading) {
+        return <Loading></Loading>
+    }
 
     const handleFromSubmitReg = event => {
         event.preventDefault();

@@ -4,6 +4,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import auth from '../../../firebase.init';
 import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { useLocation } from "react-router-dom";
+import Loading from '../../Shared/Loading/Loading';
 const Login = () => {
     const [
         signInWithEmailAndPassword,
@@ -16,7 +17,6 @@ const Login = () => {
         event.preventDefault();
         const email = event.target.email.value;
         const password = event.target.password.value;
-        console.log(email, password);
 
         signInWithEmailAndPassword(email, password)
     }
@@ -29,6 +29,12 @@ const Login = () => {
             navigate(from);
         }
     }, [user, navigate, from]);
+
+    if (loading) {
+        return <Loading></Loading>
+    }
+
+
     return (
         <div className='w-100 '>
             <div className='w-50 mx-auto shadow-lg p-5 m-5 rounded h-100 bg-light'>
